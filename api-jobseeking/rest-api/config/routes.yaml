@@ -1,0 +1,108 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+register:
+  path: register
+  controller: App\Controller\AuthController::register
+  methods: POST
+
+api_login_check:
+  path: /api/login_check
+  controller: App\Listeners\AuthController::onAuthenticationSuccess
+  methods: POST
+
+api_login:
+  path: /api/login
+  controller: App\Controller\AuthController::login
+  methods: POST
+
+gesdinet_jwt_refresh_token:
+  path: /api/token/refresh
+  controller: gesdinet.jwtrefreshtoken::refresh
+
+api_getall_logo:
+  path: /api/getall_logo
+  controller: App\Controller\LogoController::getAllLogo
+  methods: GET
+
+api_upload_logo:
+  path: /api/upload_logo
+  controller: App\Controller\LogoController::uploadLogo
+  methods: POST
+
+api_post:
+  path: /api/post
+  controller: App\Controller\PostsController::addPost
+  methods: POST
+
+search_job:
+  path: search_job
+  controller: App\Controller\PostsController::searchJob
+  methods: GET
+
+getall_company:
+  path: getall_company
+  controller: App\Controller\PostsController::getAllCompany
+  methods: GET
+
+search_company:
+  path: search_company
+  controller: App\Controller\PostsController::searchCompany
+  methods: GET
+
+api_getcv:
+  path: /api/getcv
+  controller: App\Controller\CurriculumVitaeController::getCV
+  methods: GET
+
+uploadCV:
+  path: /uploadCV
+  controller: App\Controller\CurriculumVitaeController::uploadCV
+  methods: POST
+
+post:
+  path: /post
+  controller: App\Controller\PostsController::getPosts
+  methods: GET
+
+findpost:
+  path: /findpost
+  controller: App\Controller\PostsController::findPost
+  methods: GET
+
+usercompany:
+  path: /getusercompany
+  controller: App\Controller\ManagementController::getUserCompany
+  methods: GET
+
+getbycompany:
+  path: /getbycompany
+  controller: App\Controller\ManagementController::getByCompany
+  methods: GET
+
+updatecompany:
+  path: /updatecompany
+  controller: App\Controller\ManagementController::updateCompany
+  methods: PUT
+
+deletecompany:
+  path: /deletecompany
+  controller: App\Controller\ManagementController::deleteCompany
+  methods: DELETE
+
+countcompany:
+  path: /countcompany
+  controller: App\Controller\ManagementController::countCompany
+  methods: GET
+
+getuser:
+  path: /api/getuser
+  controller: App\Controller\ManagementController::getUser
+  methods: GET
+
+api_logout:
+    path: /logout
+
+test:
+  path: /api/test
+  controller: App\Controller\ApiController::test
